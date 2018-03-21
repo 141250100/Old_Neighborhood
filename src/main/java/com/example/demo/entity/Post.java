@@ -1,6 +1,6 @@
   
     /**    
-    * @Title: User.java  
+    * @Title: Post.java  
     * @Package com.example.demo.entity  
     * @Description: TODO(用一句话描述该文件做什么)  
     * @author 彭冲 
@@ -17,8 +17,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,56 +25,52 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 /**  
-    * @ClassName: User  
-    * @Description: 创建一个新的实例 User.
+    * @ClassName: Post  
+    * @Description: TODO(这里用一句话描述这个类的作用)  
     * @author 彭冲 
     * @date 2018年3月21日  
     *    
     */
 @Entity
-@Table(name = "user")
+@Table(name = "post")
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Data
 @Builder
-public class User implements Serializable{
+public class Post implements Serializable{
+
+	  
 	    /**  
-	    * @Fields field:field  
+	    * @Fields field:field:{todo}(用一句话描述这个变量表示什么)  
 	    */  
 	    
-	private static final long serialVersionUID = -1369148652554782331L;
+	private static final long serialVersionUID = -4226803885162480336L;
 	  
 		    /**  
-		     * 创建一个新的实例 User.  
+		     * 创建一个新的实例 Post.  
 		     *  
+		     * @param p_ID
+		     * @param p_content
+		     * @param p_image
 		     * @param u_ID
-		     * @param u_name
-		     * @param u_password
-		     * @param u_image
-		     * @param u_score
-		     * @param u_tele
-		     * @param u_date
-		     * @param u_email
-		     * @param u_signature  
+		     * @param s_ID
+		     * @param f_ID
+		     * @param p_date  
 		     */  
-		     
+		    
+		
 	@Id @NonNull
+	private String p_ID;
+	@NonNull
+	private String p_content;
+	private String p_image;
+	@NonNull
 	private String u_ID;
 	@NonNull
-	private String u_name;
+	private String s_ID;
 	@NonNull
-	private String u_password;
-	@NonNull
-	private String u_image;
-	@NonNull
-	private Integer u_score;
-	@NonNull
-	private String u_tele;
+	private String f_ID;
 	@Column(columnDefinition = "timestamp not null default now()", updatable = false)
-	private Timestamp u_date;
-	private String u_email;
-	@NonNull
-	private String u_signature;
-	
+	private Timestamp p_date;
 }
